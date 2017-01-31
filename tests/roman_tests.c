@@ -11,6 +11,18 @@ START_TEST(test_dec_of_roman_digit)
 }
 END_TEST
 
+
+START_TEST(test_dec_to_roman_conversion)
+{
+    char str[ARRAY_SZ];
+    toRoman(str,1);
+    ck_assert_str_eq(str,"I");
+}
+END_TEST
+
+
+
+
 Suite *roman_test_suite(){
 
     Suite *s;
@@ -19,7 +31,10 @@ Suite *roman_test_suite(){
     s = suite_create("Roman test suite");
 
     tcase_add_test(test_case, test_dec_of_roman_digit);
-    suite_add_tcase(s, test_case);
+    
+    tcase_add_test(test_case, test_dec_to_roman_conversion);
+    
+	suite_add_tcase(s, test_case);
 
     return s;
 
