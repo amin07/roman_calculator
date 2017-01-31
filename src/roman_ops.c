@@ -13,4 +13,27 @@ int retDec(char ch){
 }
 
 
+void toRoman(char *str2, int num){
+    strcpy(str2,"");
+    //puts(h[2]);
+    int temp = num;
+    int num_of_th = temp/1000;
+    temp = temp%1000;
+    while(num_of_th--) strcat(str2,"M");
+
+    // adding hundred's place
+
+    num_of_th = temp/100;
+    temp = temp%100;
+    strcat(str2,h[num_of_th]);
+
+    // adding ten's place
+    num_of_th = temp/10;
+    temp = temp%10;
+    strcat(str2,t[num_of_th]);
+
+    // adding one's place
+    strcat(str2,o[temp]);
+
+}
 
