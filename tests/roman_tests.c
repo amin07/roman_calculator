@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<check.h>
+#include "roman_ops.h"
 
 START_TEST(test_dec_of_roman_digit)
 {
@@ -14,7 +15,7 @@ Suite *roman_test_suite(){
     test_case = tcase_create("Head case");
     s = suite_create("Roman test suite");
 
-    tcase_add_test(test_case, test_addition);
+    tcase_add_test(test_case, test_dec_of_roman_digit);
     suite_add_tcase(s, test_case);
 
     return s;
