@@ -5,6 +5,9 @@
 START_TEST(test_dec_of_roman_digit)
 {
     ck_assert_int_eq(retDec('V'),5);
+    ck_assert_int_eq(retDec('v'),5);
+    ck_assert_int_eq(retDec('i'),1);
+    ck_assert_int_eq(retDec('x'),10);
 }
 END_TEST
 
