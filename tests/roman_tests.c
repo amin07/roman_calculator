@@ -2,6 +2,11 @@
 #include<check.h>
 #include "roman_ops.h"
 
+
+/*
+This blocks contains all tests related to a helper function which is
+required for successful conversion between roman and decimals
+*/
 START_TEST(test_dec_of_roman_digit)
 {
     ck_assert_int_eq(retDec('V'),5);
@@ -11,6 +16,9 @@ START_TEST(test_dec_of_roman_digit)
 }
 END_TEST
 
+/*
+This blocks contains all tests related to decimal to roman conversion
+*/
 
 START_TEST(test_dec_to_roman_conversion)
 {
@@ -30,7 +38,9 @@ START_TEST(test_dec_to_roman_conversion)
 }
 END_TEST
 
-
+/*
+This blocks contains all tests related to roman to decimal conversion
+*/
 START_TEST(test_roman_to_dec_conversion)
 {
     ck_assert_int_eq(1,toDec("I"));
@@ -43,6 +53,10 @@ START_TEST(test_roman_to_dec_conversion)
 }
 END_TEST
 
+
+/*
+This blocks contains all tests related to addition
+*/
 START_TEST(test_addition)
 {
 	char *str1;
@@ -78,6 +92,10 @@ START_TEST(test_addition)
 }
 END_TEST
 
+
+/*
+This blocks contains all tests related to subtraction
+*/
 
 START_TEST(test_subtraction)
 {
@@ -116,6 +134,10 @@ START_TEST(test_subtraction)
 }
 END_TEST
 
+/*
+This function creates a test suite with all the test cases we wrote earlier
+and returns it to main so that we can see the outputs of test runs
+*/
 
 Suite *roman_test_suite(){
 

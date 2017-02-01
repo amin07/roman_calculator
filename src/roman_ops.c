@@ -2,12 +2,16 @@
 #include<string.h>
 #include "roman_ops.h"
 
-
+// constants required for conversion process
 const char *h[]={"","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"};
 const char *t[]={"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
 const char *o[]={"","I","II","III","IV","V","VI","VII","VIII","IX"};
 
-
+/*
+Helper function required for conversion
+input: a character
+returns: decimal equivalent to input character
+*/
 int retDec(char ch){
 
     if(ch=='i'||ch=='I') return 1;
@@ -20,9 +24,13 @@ int retDec(char ch){
 }
 
 
+/*
+This function is for conversion from decimal to roman
+input: a string reference and a integer number
+output: assign roman equivalent to integer to the string referenced passed
+*/
 void toRoman(char *str2, int num){
     strcpy(str2,"");
-    //puts(h[2]);
     int temp = num;
     int num_of_th = temp/1000;
     temp = temp%1000;
@@ -44,6 +52,12 @@ void toRoman(char *str2, int num){
 
 }
 
+
+/*
+This function converts a roman number to an integer number
+input: roman number as in a string reference
+returns: integer equivalent of the roman number
+*/
 int toDec(char *str){
     int sum, i, j,len;
     sum = 0;
@@ -76,7 +90,6 @@ int toDec(char *str){
 
     }
     if(len==1) sum = retDec(str[0]);
-    //printf("%d\n",sum);
     return sum;
 
 }
