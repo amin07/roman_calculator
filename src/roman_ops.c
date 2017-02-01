@@ -67,6 +67,7 @@ int toDec(char *str){
                 sum += 2*retDec(str[i]);
                 i++;
             }
+			if(i+1==len-1) sum += retDec(str[i+1]);
         }
         else{
             sum += 2*retDec(str[i]);
