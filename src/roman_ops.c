@@ -1,5 +1,12 @@
 #include<stdio.h>
+#include<string.h>
 #include "roman_ops.h"
+
+
+const char *h[]={"","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"};
+const char *t[]={"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
+const char *o[]={"","I","II","III","IV","V","VI","VII","VIII","IX"};
+
 
 int retDec(char ch){
 

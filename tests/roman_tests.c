@@ -17,6 +17,16 @@ START_TEST(test_dec_to_roman_conversion)
     char str[ARRAY_SZ];
     toRoman(str,1);
     ck_assert_str_eq(str,"I");
+	toRoman(str,3999);
+    ck_assert_str_eq(str,"MMMCMXCIX");
+    toRoman(str,3888);
+	ck_assert_str_eq(str,"MMMDCCCLXXXVIII");
+	toRoman(str,3231);
+	ck_assert_str_eq(str,"MMMCCXXXI");
+	toRoman(str,231);
+	ck_assert_str_eq(str,"CCXXXI");
+	toRoman(str,55);
+	ck_assert_str_eq(str,"LV");
 }
 END_TEST
 
