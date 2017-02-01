@@ -78,6 +78,45 @@ START_TEST(test_addition)
 }
 END_TEST
 
+
+START_TEST(test_subtraction)
+{
+	char *str1;
+	char *str2;
+	char res[ARRAY_SZ];
+	
+	str1 = "I";
+	str2 = "D";
+    toRoman(res,toDec(str2)-toDec(str1));
+    ck_assert_str_eq(res,"CDXCIX");
+	
+	/*
+	str1 = "CD";
+	str2 = "XCIV";	
+    toRoman(res,toDec(str1)+toDec(str2));
+    ck_assert_str_eq(res,"CDXCIV");
+
+	str1 = "DXXIII";			//523
+	str2 = "CCCXXIII";			//323
+    toRoman(res,toDec(str1)+toDec(str2));
+    ck_assert_str_eq(res,"DCCCXLVI");
+
+	str1 = "I";					// 1
+	str2 = "MMMCMXCVIII";		// 3998
+    toRoman(res,toDec(str1)+toDec(str2));
+    ck_assert_str_eq(res,"MMMCMXCIX");
+
+	
+	str1 = "MMDLV";				//2555
+	str2 = "IV";				//4	
+    toRoman(res,toDec(str1)+toDec(str2));
+    ck_assert_str_eq(res,"MMDLIX");
+	*/
+
+}
+END_TEST
+
+
 Suite *roman_test_suite(){
 
     Suite *s;
@@ -90,6 +129,7 @@ Suite *roman_test_suite(){
     tcase_add_test(test_case, test_roman_to_dec_conversion);
     
     tcase_add_test(test_case, test_addition);
+    tcase_add_test(test_case, test_subtraction);
 	suite_add_tcase(s, test_case);
 
     return s;
