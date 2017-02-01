@@ -51,23 +51,30 @@ START_TEST(test_addition)
 	
 	str1 = "I";
 	str2 = "D";
-		
     toRoman(res,toDec(str1)+toDec(str2));
     ck_assert_str_eq(res,"DI");
 	
-	/*
-	toRoman(str,3999);
-    ck_assert_str_eq(str,"MMMCMXCIX");
-    toRoman(str,3888);
-	ck_assert_str_eq(str,"MMMDCCCLXXXVIII");
-	toRoman(str,3231);
-	ck_assert_str_eq(str,"MMMCCXXXI");
-	toRoman(str,231);
-	ck_assert_str_eq(str,"CCXXXI");
-	toRoman(str,55);
-	ck_assert_str_eq(str,"LV");
+	str1 = "CD";
+	str2 = "XCIV";	
+    toRoman(res,toDec(str1)+toDec(str2));
+    ck_assert_str_eq(res,"CDXCIV");
 
-	*/
+	str1 = "DXXIII";			//523
+	str2 = "CCCXXIII";			//323
+    toRoman(res,toDec(str1)+toDec(str2));
+    ck_assert_str_eq(res,"DCCCXLVI");
+
+	str1 = "I";					// 1
+	str2 = "MMMCMXCVIII";		// 3998
+    toRoman(res,toDec(str1)+toDec(str2));
+    ck_assert_str_eq(res,"MMMCMXCIX");
+
+	
+	str1 = "MMDLV";				//2555
+	str2 = "IV";				//4	
+    toRoman(res,toDec(str1)+toDec(str2));
+    ck_assert_str_eq(res,"MMDLIX");
+
 }
 END_TEST
 
