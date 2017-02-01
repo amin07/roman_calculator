@@ -1,5 +1,8 @@
 Author: Al Amin Hosain
 Program Name: Roman Numeral Calculator v1.0.0
+Dependencies: 
+	- GCC tool chain
+ 	- Check unit testing framework
 ---------------------------------------------------------------------
 
 This program is an implementation of basic Roman Numerals operations.
