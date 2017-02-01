@@ -85,33 +85,33 @@ START_TEST(test_subtraction)
 	char *str2;
 	char res[ARRAY_SZ];
 	
-	str1 = "I";
-	str2 = "D";
-    toRoman(res,toDec(str2)-toDec(str1));
+	str1 = "D";
+	str2 = "I";
+    toRoman(res,toDec(str1)-toDec(str2));
     ck_assert_str_eq(res,"CDXCIX");
 	
-	/*
-	str1 = "CD";
-	str2 = "XCIV";	
-    toRoman(res,toDec(str1)+toDec(str2));
-    ck_assert_str_eq(res,"CDXCIV");
+	
+	str1 = "CDIV";
+	str2 = "CDI";	
+    toRoman(res,toDec(str1)-toDec(str2));
+    ck_assert_str_eq(res,"III");
 
-	str1 = "DXXIII";			//523
-	str2 = "CCCXXIII";			//323
-    toRoman(res,toDec(str1)+toDec(str2));
-    ck_assert_str_eq(res,"DCCCXLVI");
+	str1 = "DCCCXXVII";			//827
+	str2 = "CDXCIV";			//494
+    toRoman(res,toDec(str1)-toDec(str2));
+    ck_assert_str_eq(res,"CCCXXXIII");
 
-	str1 = "I";					// 1
-	str2 = "MMMCMXCVIII";		// 3998
-    toRoman(res,toDec(str1)+toDec(str2));
-    ck_assert_str_eq(res,"MMMCMXCIX");
+	str1 = "MMMDCCCLXXX";		// 3880
+	str2 = "DCCLIII";			// 753
+    toRoman(res,toDec(str1)-toDec(str2));
+    ck_assert_str_eq(res,"MMMCXXVII");
 
 	
-	str1 = "MMDLV";				//2555
-	str2 = "IV";				//4	
-    toRoman(res,toDec(str1)+toDec(str2));
-    ck_assert_str_eq(res,"MMDLIX");
-	*/
+	str1 = "LXXIX";				//79
+	str2 = "XL";				//40	
+    toRoman(res,toDec(str1)-toDec(str2));
+    ck_assert_str_eq(res,"XXXIX");
+	
 
 }
 END_TEST
