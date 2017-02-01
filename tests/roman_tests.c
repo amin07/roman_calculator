@@ -31,6 +31,16 @@ START_TEST(test_dec_to_roman_conversion)
 END_TEST
 
 
+START_TEST(test_roman_to_dec_conversion)
+{
+    ck_assert_int_eq(1,toDec("I"));
+    ck_assert_int_eq(3999,toDec("MMMCMXCIX"));
+	ck_assert_int_eq(3888,toDec("MMMDCCCLXXXVIII"));
+	ck_assert_int_eq(421,toDec("CDXXI"));
+	ck_assert_int_eq(333,toDec("CCCXXXIII"));
+	ck_assert_int_eq(66,toDec("LXVI"));
+}
+END_TEST
 
 
 Suite *roman_test_suite(){
@@ -41,8 +51,8 @@ Suite *roman_test_suite(){
     s = suite_create("Roman test suite");
 
     tcase_add_test(test_case, test_dec_of_roman_digit);
-    
     tcase_add_test(test_case, test_dec_to_roman_conversion);
+    tcase_add_test(test_case, test_roman_to_dec_conversion);
     
 	suite_add_tcase(s, test_case);
 

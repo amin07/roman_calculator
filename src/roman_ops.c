@@ -44,3 +44,39 @@ void toRoman(char *str2, int num){
 
 }
 
+int toDec(char *str){
+    int sum, i, j,len;
+    sum = 0;
+    len = strlen(str);
+    for(i=0;i<len-1;i++){
+        if(retDec(str[i])>retDec(str[i+1])){
+            sum += retDec(str[i]);
+            if(i+1==len-1) sum += retDec(str[i+1]);
+        }
+        else if(retDec(str[i])<retDec(str[i+1])){
+            sum += (retDec(str[i+1])-retDec(str[i]));
+            i++;
+            if(i+1==len-1) sum += retDec(str[i+1]);
+        }
+        else if(i+2<len){
+            if(retDec(str[i+1])==retDec(str[i+2])){
+                sum += 3*retDec(str[i]);
+                i+=2;
+            }
+            else{
+                sum += 2*retDec(str[i]);
+                i++;
+            }
+        }
+        else{
+            sum += 2*retDec(str[i]);
+            i++;
+        }
+
+    }
+    if(len==1) sum = retDec(str[0]);
+    //printf("%d\n",sum);
+    return sum;
+
+}
+
